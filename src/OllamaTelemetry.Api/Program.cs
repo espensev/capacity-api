@@ -97,6 +97,7 @@ app.MapGet("/", () => TypedResults.Ok(new
         "/api/llm/sessions/{sessionId}",
         "/api/llm/ollama/models",
         "/api/llm/ollama/inference",
+        "/api/ingest/snapshot",
         "/api/llm/ingest",
         "/api/llm/ollama/generate",
         "/api/evals/catalog/models",
@@ -111,6 +112,7 @@ app.MapGet("/", () => TypedResults.Ok(new
 
 app.MapTelemetryEndpoints();
 app.MapCapacityEndpoints();
+app.MapIngestEndpoints();
 app.MapLlmUsageEndpoints();
 app.MapEvaluationEndpoints();
 
