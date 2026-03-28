@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/OllamaTelemetry.Api/OllamaTelemetry.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/OllamaTelemetry.Api.Tests/OllamaTelemetry.Api.Tests.csproj" />
+  </Folder>
+</Solution>

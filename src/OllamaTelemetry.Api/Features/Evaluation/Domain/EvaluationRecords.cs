@@ -1,0 +1,70 @@
+namespace OllamaTelemetry.Api.Features.Evaluation.Domain;
+
+public sealed record EvaluationRunRecord(
+    string RunId,
+    string Title,
+    string Status,
+    DateTimeOffset CreatedAtUtc,
+    string? CreatedBy,
+    string? Notes);
+
+public sealed record EvaluationCandidateRecord(
+    string CandidateId,
+    string RunId,
+    int SortOrder,
+    string MachineId,
+    string DisplayName,
+    string Endpoint,
+    string Provider,
+    string MachineModelId,
+    string CanonicalModelId,
+    string DisplayLabel,
+    string ShortLabel,
+    string ModelName,
+    string Family,
+    string FamilySlug,
+    string? Tag,
+    string ParameterSize,
+    string QuantizationLevel,
+    int ContextLength,
+    bool IsLoaded);
+
+public sealed record EvaluationCaseRecord(
+    string CaseId,
+    string RunId,
+    int SortOrder,
+    string CaseKey,
+    string PromptLabel,
+    string PromptText,
+    string? ExpectedNotes,
+    DateTimeOffset CreatedAtUtc);
+
+public sealed record EvaluationCaseResultRecord(
+    string ResultId,
+    string RunId,
+    string CaseId,
+    string CandidateId,
+    string MachineId,
+    string DisplayName,
+    string Endpoint,
+    string Provider,
+    string MachineModelId,
+    string CanonicalModelId,
+    string DisplayLabel,
+    string ModelName,
+    DateTimeOffset StartedAtUtc,
+    DateTimeOffset CompletedAtUtc,
+    int PromptTokens,
+    int CompletionTokens,
+    double TokensPerSecond,
+    long TotalDurationMs,
+    long PromptEvalDurationMs,
+    long EvalDurationMs,
+    string? ResponseText,
+    bool WasError,
+    string? ErrorText,
+    string? ExecutedBy,
+    string? JudgedBy,
+    double? Score,
+    string? Verdict,
+    string? JudgmentNotes);
